@@ -12,11 +12,12 @@ const useMovies = (query, callback) => {
       try {
         setIsLoading(true);
         const res = await fetch(
-          `https://www.omdbapi.com/?apikey=5ee8542c&s=${query}`,
+          `https://www.omdbapi.com/?apikey=${
+            import.meta.env.VITE_OMDB_API_KEY
+          }&s=${query}`,
           { signal: controller.signal }
         );
         const data = await res.json();
-        console.log(data);
         if (data.Response === "False") {
           if (data.Error === "Incorrect IMDb ID.") {
             if (query.length > 0) {
