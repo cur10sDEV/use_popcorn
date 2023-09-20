@@ -1,0 +1,9 @@
+.list-container {
+  height: calc(100% - 10rem);
+}
+
+.box {
+  width: 32rem;
+  height: 100%;
+  margin: 0 1rem;
+}
